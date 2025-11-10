@@ -43,6 +43,11 @@
   color: var(--color-text-primary);
 }
 
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
 .form-row {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { useCart } from "../../context/CartContext";
 import { useTheme } from "../../context/ThemeContext";
 import CartDropdown from "../CartDropdown";
@@ -44,8 +44,8 @@ const Header = () => {
             SPICE BAZAAR
           </h1>
           <nav className="nav">
-            <a href="/products">Shop Spices</a>
-            <a href="/about">Our Story</a>
+            <Link to="/products">Shop Spices</Link>
+            <Link to="/about">Our Story</Link>
             <a href="#">Recipes</a>
           </nav>
           <div className="header-actions">

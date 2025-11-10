@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import AppHeader from "../../components/AppHeader";
 import Footer from "../../components/Footer";
 import "./FAQ.css";
@@ -216,9 +217,9 @@ const FAQ = () => {
                     <span>Mon-Fri: 9AM - 6PM EST</span>
                   </div>
                 </div>
-                <a href="/contact" className="btn btn-primary">
+                <Link to="/contact" className="btn btn-primary">
                   Contact Us
-                </a>
+                </Link>
               </div>
             </div>
           </div>

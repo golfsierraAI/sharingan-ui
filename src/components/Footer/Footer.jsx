@@ -138,22 +138,22 @@ const Footer = () => {
             <h4 className="footer-heading">Customer Service</h4>
             <ul className="footer-links">
               <li>
-                <a href="/contact">Contact Us</a>
+                <Link to="/contact">Contact Us</Link>
               </li>
               <li>
-                <a href="/faq">FAQs</a>
+                <Link to="/faq">FAQs</Link>
               </li>
               <li>
-                <a href="/shipping">Shipping Information</a>
+                <Link to="/shipping">Shipping Information</Link>
               </li>
               <li>
-                <a href="/returns">Returns & Exchanges</a>
+                <Link to="/returns">Returns & Exchanges</Link>
               </li>
               <li>
-                <a href="/track-order">Track Your Order</a>
+                <Link to="/track-order">Track Your Order</Link>
               </li>
               <li>
-                <a href="/size-guide">Size & Quantity Guide</a>
+                <Link to="/size-guide">Size & Quantity Guide</Link>
               </li>
             </ul>
           </div>
@@ -163,19 +163,19 @@ const Footer = () => {
             <h4 className="footer-heading">About Us</h4>
             <ul className="footer-links">
               <li>
-                <a href="/about">Our Story</a>
+                <Link to="/about">Our Story</Link>
               </li>
               <li>
-                <a href="/sustainability">Sustainability</a>
+                <Link to="/sustainability">Sustainability</Link>
               </li>
               <li>
-                <a href="/sourcing">Sourcing Practices</a>
+                <Link to="/sourcing">Sourcing Practices</Link>
               </li>
               <li>
-                <a href="/careers">Careers</a>
+                <Link to="/careers">Careers</Link>
               </li>
               <li>
-                <a href="/press">Press & Media</a>
+                <Link to="/press">Press & Media</Link>
               </li>
             </ul>
           </div>
@@ -250,13 +250,13 @@ const Footer = () => {
               &copy; {currentYear} Spice Bazaar. All rights reserved.
             </p>
             <div className="legal-links">
-              <a href="/privacy-policy">Privacy Policy</a>
+              <Link to="/privacy-policy">Privacy Policy</Link>
               <span className="separator">•</span>
-              <a href="/terms-of-service">Terms of Service</a>
+              <Link to="/terms-of-service">Terms of Service</Link>
               <span className="separator">•</span>
-              <a href="/cookie-policy">Cookie Policy</a>
+              <Link to="/cookie-policy">Cookie Policy</Link>
               <span className="separator">•</span>
-              <a href="/accessibility">Accessibility</a>
+              <Link to="/accessibility">Accessibility</Link>
             </div>
           </div>
           <p className="footer-tagline">Crafted with ❤️ and authentic spices</p>

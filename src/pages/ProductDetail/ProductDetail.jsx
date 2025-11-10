@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useParams, useNavigate, useLocation } from "react-router-dom";
+import { useParams, useNavigate, useLocation, Link } from "react-router-dom";
 import { useCart } from "../../context/CartContext";
 import AppHeader from "../../components/AppHeader";
 import Footer from "../../components/Footer";
@@ -63,7 +63,7 @@ const ProductDetail = () => {
 
       <main className="product-detail-main">
         <div className="breadcrumb">
-          <a href="/">Home</a>
+          <Link to="/">Home</Link>
           <span>/</span>
           <span>{product.name}</span>
         </div>

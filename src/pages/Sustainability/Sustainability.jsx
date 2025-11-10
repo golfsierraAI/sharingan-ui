@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import AppHeader from "../../components/AppHeader";
 import Footer from "../../components/Footer";
 import "./Sustainability.css";
@@ -309,12 +310,12 @@ const Sustainability = () => {
                 and helps us build a better future for our planet.
               </p>
               <div className="cta-buttons">
-                <a href="/products" className="btn btn-primary">
+                <Link to="/products" className="btn btn-primary">
                   Shop Sustainable Spices
-                </a>
-                <a href="/sourcing" className="btn btn-outline">
+                </Link>
+                <Link to="/sourcing" className="btn btn-outline">
                   Learn About Our Sourcing
-                </a>
+                </Link>
               </div>
             </div>
           </div>

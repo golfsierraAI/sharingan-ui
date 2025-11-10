@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import AppHeader from "../../components/AppHeader";
 import Footer from "../../components/Footer";
 import Input from "../../components/Input";
@@ -182,9 +183,9 @@ const Contact = () => {
                       </div>
                     ))}
                   </div>
-                  <a href="/faq" className="btn btn-outline btn-full">
+                  <Link to="/faq" className="btn btn-outline btn-full">
                     View All FAQs
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>

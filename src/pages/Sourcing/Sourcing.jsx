@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import AppHeader from "../../components/AppHeader";
 import Footer from "../../components/Footer";
 import "./Sourcing.css";
@@ -246,12 +247,12 @@ const Sourcing = () => {
                 farmer relationships.
               </p>
               <div className="cta-buttons">
-                <a href="/products" className="btn btn-primary">
+                <Link to="/products" className="btn btn-primary">
                   Shop Our Collection
-                </a>
-                <a href="/sustainability" className="btn btn-outline">
+                </Link>
+                <Link to="/sustainability" className="btn btn-outline">
                   Our Sustainability Commitment
-                </a>
+                </Link>
               </div>
             </div>
           </div>
