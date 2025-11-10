@@ -11,6 +11,7 @@ import Products from "./pages/Products/Products";
 import ProductDetail from "./pages/ProductDetail/ProductDetail";
 import Cart from "./pages/Cart/Cart";
 import Checkout from "./pages/Checkout/Checkout";
+import CheckoutSuccess from "./pages/CheckoutSuccess/CheckoutSuccess";
 import FAQ from "./pages/FAQ/FAQ";
 import OurStory from "./pages/OurStory/OurStory";
 import Sustainability from "./pages/Sustainability/Sustainability";
@@ -40,6 +41,7 @@ function App() {
                   </ProtectedRoute>
                 }
               />
+              <Route path="/checkout/success" element={<CheckoutSuccess />} />
               <Route path="/faq" element={<FAQ />} />
               <Route path="/about" element={<OurStory />} />
               <Route path="/sustainability" element={<Sustainability />} />

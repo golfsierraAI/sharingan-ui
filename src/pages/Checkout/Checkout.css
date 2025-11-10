@@ -142,6 +142,90 @@ form {
   }
 }
 
+/* Payment Section */
+.checkout-payment-section {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.section-heading-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.edit-button {
+  background: none;
+  border: none;
+  color: var(--color-primary);
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: underline;
+  padding: 0;
+}
+
+.edit-button:hover {
+  color: var(--color-primary-dark);
+}
+
+.shipping-summary {
+  background: var(--color-bg-secondary);
+  padding: 16px;
+  border-radius: 8px;
+  margin-bottom: 24px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--color-text-primary);
+}
+
+.shipping-summary p {
+  margin: 4px 0;
+}
+
+.shipping-summary p:first-of-type {
+  margin-top: 0;
+}
+
+/* Error Banner */
+.checkout-error-banner {
+  background-color: #fef2f2;
+  border: 1px solid #fee2e2;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 24px;
+  color: #dc2626;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.checkout-error-banner strong {
+  font-weight: 600;
+}
+
+/* Trust Badges */
+.trust-badges {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.trust-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--color-text-secondary);
+}
+
+.trust-badge span:first-child {
+  font-size: 18px;
+}
+
 @media (max-width: 480px) {
   .checkout-content {
     padding: 32px 20px;
@@ -149,5 +233,9 @@ form {
 
   .checkout-title {
     font-size: 24px;
+  }
+
+  .trust-badges {
+    margin-top: 16px;
   }
 }

@@ -1,0 +1,61 @@
+.stripe-checkout-form {
+  width: 100%;
+}
+
+.payment-element-container {
+  margin-bottom: 1.5rem;
+}
+
+.stripe-error-message {
+  color: #df1b41;
+  font-size: 0.875rem;
+  margin: 1rem 0;
+  padding: 0.75rem;
+  background-color: #fef2f2;
+  border: 1px solid #fee2e2;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.stripe-error-message::before {
+  content: "⚠️";
+  font-size: 1rem;
+}
+
+.stripe-security-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+.stripe-security-badge svg {
+  color: #10b981;
+}
+
+/* Loading state for payment element */
+.stripe-checkout-form button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Ensure proper spacing in payment element */
+.payment-element-container > div {
+  padding: 0;
+}
+
+/* Mobile responsive */
+@media (max-width: 640px) {
+  .stripe-checkout-form {
+    padding: 0;
+  }
+
+  .payment-element-container {
+    margin-bottom: 1rem;
+  }
+}
