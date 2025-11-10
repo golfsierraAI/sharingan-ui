@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
 import Input from '../../components/Input';
 import Button from '../../components/Button';
@@ -123,7 +123,7 @@ const Login = () => {
                 </form>
 
                 <div className="signup-prompt">
-                    <p>New to Spice Bazaar? <a href="/signup" className="link">Create an account</a></p>
+                    <p>New to Spice Bazaar? <Link to="/signup" className="link">Create an account</Link></p>
                 </div>
             </Card>
         </div>

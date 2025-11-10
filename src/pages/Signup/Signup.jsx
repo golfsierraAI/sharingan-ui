@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
 import Button from '../../components/Button';
 import Input from '../../components/Input';
@@ -156,7 +156,7 @@ const Signup = () => {
                 </form>
 
                 <div className="login-prompt">
-                    <p>Already have an account? <a href="/login" className="link">Sign In</a></p>
+                    <p>Already have an account? <Link to="/login" className="link">Sign In</Link></p>
                 </div>
             </Card>
         </div>
