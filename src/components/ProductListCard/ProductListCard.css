@@ -1,0 +1,218 @@
+.product-list-card {
+  background: var(--color-card-bg);
+  border-radius: 16px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 1px solid var(--color-border);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.product-list-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15),
+    0 0 0 1px rgba(255, 255, 255, 0.1), 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.product-list-card:hover .product-list-card-btn {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Image Section */
+.product-list-card-image {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1;
+  overflow: hidden;
+  background: var(--color-bg-secondary);
+}
+
+.product-list-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.product-list-card:hover .product-list-card-image img {
+  transform: scale(1.1);
+}
+
+.product-list-card-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  backdrop-filter: blur(4px);
+}
+
+/* Content Section */
+.product-list-card-content {
+  padding: 16px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-list-card-category {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+  display: inline-block;
+}
+
+.product-list-card-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin: 0 0 12px 0;
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.product-list-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+}
+
+.product-list-card-rating {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: #f59e0b;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.product-list-card-rating svg {
+  flex-shrink: 0;
+}
+
+.product-list-card-rating span {
+  color: var(--color-text-secondary);
+}
+
+.product-list-card-price {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+
+/* Add to Cart Button */
+.product-list-card-btn {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  right: 12px;
+  padding: 8px 12px;
+  background: var(--color-text-primary);
+  color: var(--color-card-bg);
+  border: none;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+  z-index: 2;
+}
+
+.product-list-card-btn:hover {
+  opacity: 0.9;
+  transform: scale(1.02);
+}
+
+.product-list-card-btn:active {
+  transform: scale(0.98);
+}
+
+.product-list-card-btn svg {
+  flex-shrink: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .product-list-card-btn {
+    display: none;
+  }
+
+  /* Horizontal layout for grid view only */
+  .products-list-grid.grid .product-list-card {
+    flex-direction: row;
+    height: auto;
+  }
+
+  .products-list-grid.grid .product-list-card-image {
+    width: 120px;
+    min-width: 120px;
+    aspect-ratio: 1;
+    flex-shrink: 0;
+  }
+
+  .products-list-grid.grid .product-list-card-content {
+    padding: 12px;
+    justify-content: space-between;
+  }
+
+  .products-list-grid.grid .product-list-card-category {
+    font-size: 10px;
+    margin-bottom: 4px;
+  }
+
+  .products-list-grid.grid .product-list-card-title {
+    font-size: 14px;
+    min-height: auto;
+    margin-bottom: 8px;
+    -webkit-line-clamp: 2;
+  }
+
+  .products-list-grid.grid .product-list-card-footer {
+    margin-top: 8px;
+  }
+
+  .products-list-grid.grid .product-list-card-rating {
+    font-size: 12px;
+  }
+
+  .products-list-grid.grid .product-list-card-rating svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  .products-list-grid.grid .product-list-card-price {
+    font-size: 18px;
+  }
+
+  .products-list-grid.grid .product-list-card-badge {
+    top: 8px;
+    right: 8px;
+    font-size: 10px;
+    padding: 3px 8px;
+  }
+
+  /* Keep original vertical layout for list view - no overrides needed */
+}

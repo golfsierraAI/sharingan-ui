@@ -1,0 +1,43 @@
+.marquee-container {
+    background-color: var(--color-button-primary-bg);
+    color: var(--color-button-primary-text);
+    padding: 10px 0;
+    overflow: hidden;
+    position: relative;
+    white-space: nowrap;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.marquee-content {
+    display: inline-block;
+    animation: marquee 30s linear infinite;
+}
+
+.marquee-item {
+    display: inline-block;
+    padding: 0 50px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* Pause on hover */
+.marquee-container:hover .marquee-content {
+    animation-play-state: paused;
+}
+
+@media (max-width: 768px) {
+    .marquee-item {
+        font-size: 13px;
+        padding: 0 30px;
+    }
+}

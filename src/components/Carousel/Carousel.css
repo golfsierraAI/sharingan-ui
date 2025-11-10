@@ -1,0 +1,74 @@
+.carousel-wrapper {
+  position: relative;
+}
+
+.carousel {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: calc(25% - 18px);
+  gap: 24px;
+  overflow-x: auto;
+  overflow-y: visible;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  padding: 10px;
+  margin: -10px 0;
+}
+
+.carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 60px;
+  border: none;
+  background: none;
+  color: white;
+  font-size: 44px;
+  font-weight: bold;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.3s ease;
+  opacity: 0;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+}
+
+.carousel-wrapper:hover .carousel-btn {
+  opacity: 1;
+}
+
+.carousel-btn:hover {
+  transform: scale(1.2);
+  text-shadow: 0 3px 12px rgba(0, 0, 0, 0.9);
+}
+
+.carousel-btn:active {
+  transform: scale(1.1);
+}
+
+.carousel-btn-left {
+  left: 0;
+}
+
+.carousel-btn-right {
+  right: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .carousel {
+    grid-auto-columns: calc(50% - 12px);
+  }
+
+  .carousel-btn {
+    display: none;
+  }
+}

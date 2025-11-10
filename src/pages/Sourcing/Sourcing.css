@@ -1,0 +1,416 @@
+.sourcing-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.sourcing-main {
+  flex: 1;
+}
+
+/* Hero Section */
+.sourcing-hero {
+  background: linear-gradient(135deg, #2d3748 0%, #1a202c 100%);
+  color: white;
+  padding: 120px 24px 80px;
+  text-align: center;
+}
+
+.sourcing-hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.sourcing-badge {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  padding: 8px 20px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 24px;
+}
+
+.sourcing-hero h1 {
+  font-size: 56px;
+  font-weight: 700;
+  margin: 0 0 20px 0;
+  line-height: 1.1;
+}
+
+.sourcing-hero p {
+  font-size: 20px;
+  opacity: 0.9;
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* Section Styles */
+.sourcing-section {
+  padding: 80px 24px;
+}
+
+.sourcing-container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.section-heading {
+  font-size: 40px;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  text-align: center;
+  margin: 0 0 16px 0;
+}
+
+.section-subtitle {
+  font-size: 18px;
+  color: var(--color-text-secondary);
+  text-align: center;
+  margin: 0 0 48px 0;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 48px;
+}
+
+/* Intro Section */
+.intro-section {
+  background: var(--color-bg-secondary);
+}
+
+.intro-content {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.intro-content h2 {
+  font-size: 40px;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin: 0 0 24px 0;
+}
+
+.large-text {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  line-height: 1.5;
+  margin: 0 0 24px 0;
+}
+
+.intro-content p {
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--color-text-secondary);
+  margin: 0 0 20px 0;
+}
+
+/* Regions Section */
+.regions-section {
+  background: var(--color-bg-primary);
+}
+
+.regions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 32px;
+}
+
+.region-card {
+  background: var(--color-card-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.region-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 32px var(--color-shadow-md);
+}
+
+.region-image {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+}
+
+.region-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.region-card:hover .region-image img {
+  transform: scale(1.05);
+}
+
+.region-badge {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: rgba(0, 0, 0, 0.95);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+[data-theme="dark"] .region-badge {
+  background: rgba(255, 255, 255, 0.95);
+  color: #000000;
+}
+
+.region-content {
+  padding: 24px;
+}
+
+.region-header {
+  margin-bottom: 12px;
+}
+
+.region-header h3 {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin: 0 0 4px 0;
+}
+
+.region-location {
+  font-size: 14px;
+  color: var(--color-text-secondary);
+  font-weight: 500;
+}
+
+.region-content > p {
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--color-text-secondary);
+  margin: 0 0 20px 0;
+}
+
+.region-specialties strong {
+  display: block;
+  font-size: 13px;
+  color: var(--color-text-primary);
+  margin-bottom: 8px;
+}
+
+.specialty-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.specialty-tag {
+  display: inline-block;
+  background: rgba(0, 0, 0, 0.1);
+  color: var(--color-text-primary);
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+[data-theme="dark"] .specialty-tag {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Process Section */
+.process-section {
+  background: var(--color-bg-secondary);
+}
+
+.process-timeline {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.process-item {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 32px;
+  align-items: start;
+}
+
+.process-step {
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #000000;
+  color: white;
+  font-size: 24px;
+  font-weight: 700;
+  border-radius: 50%;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] .process-step {
+  background: #ffffff;
+  color: #000000;
+  box-shadow: 0 8px 24px rgba(255, 255, 255, 0.3);
+}
+
+.process-content h3 {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin: 0 0 12px 0;
+}
+
+.process-content p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+/* Principles Section */
+.principles-section {
+  background: var(--color-bg-primary);
+}
+
+.principles-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 32px;
+}
+
+.principle-card {
+  background: var(--color-card-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  padding: 32px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.principle-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 32px var(--color-shadow-md);
+  border-color: var(--color-border-focus);
+}
+
+.principle-icon {
+  font-size: 48px;
+  margin-bottom: 16px;
+}
+
+.principle-card h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin: 0 0 12px 0;
+}
+
+.principle-card p {
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+/* CTA Section */
+.cta-section {
+  background: linear-gradient(135deg, #2d3748 0%, #1a202c 100%);
+  color: white;
+  text-align: center;
+}
+
+.cta-content h2 {
+  font-size: 40px;
+  font-weight: 700;
+  margin: 0 0 16px 0;
+}
+
+.cta-content p {
+  font-size: 18px;
+  margin: 0 0 32px 0;
+  opacity: 0.9;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.cta-buttons .btn {
+  min-width: 200px;
+}
+
+.cta-buttons .btn-outline {
+  background: white;
+  color: #2d3748;
+  border-color: white;
+}
+
+.cta-buttons .btn-outline:hover {
+  background: rgba(255, 255, 255, 0.9);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .sourcing-hero {
+    padding: 80px 20px 60px;
+  }
+
+  .sourcing-hero h1 {
+    font-size: 36px;
+  }
+
+  .sourcing-hero p {
+    font-size: 16px;
+  }
+
+  .sourcing-section {
+    padding: 48px 20px;
+  }
+
+  .section-heading {
+    font-size: 32px;
+  }
+
+  .intro-content h2 {
+    font-size: 32px;
+  }
+
+  .large-text {
+    font-size: 20px;
+  }
+
+  .regions-grid,
+  .principles-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .process-item {
+    grid-template-columns: 60px 1fr;
+    gap: 20px;
+  }
+
+  .process-step {
+    width: 60px;
+    height: 60px;
+    font-size: 20px;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+  }
+
+  .cta-buttons .btn {
+    width: 100%;
+  }
+}
