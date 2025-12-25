@@ -48,6 +48,7 @@ const ProductDetail = () => {
       name: product.name,
       price: product.price,
       weight: product.weight,
+      url: product.url,
     };
     addToCart(cartProduct, quantity);
     setShowCongrats(true);

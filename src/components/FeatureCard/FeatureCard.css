@@ -1,24 +1,31 @@
 .feature-card {
-    text-align: center;
-    padding: 32px 20px;
+  text-align: center;
+  padding: 32px 20px;
 }
 
 .feature-icon {
-    font-size: 48px;
-    margin-bottom: 20px;
+  font-size: 48px;
+  margin-bottom: 20px;
+  img {
+    width: 48px;
+    height: 48px;
+  }
+}
+
+.feature-icon-emoji {
+  display: inline-block;
 }
 
 .feature-card h3 {
-    font-size: 20px;
-    font-weight: 600;
-    margin: 0 0 12px 0;
-    color: var(--color-text-primary);
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0 0 12px 0;
+  color: var(--color-text-primary);
 }
 
 .feature-card p {
-    font-size: 15px;
-    color: var(--color-text-secondary);
-    line-height: 1.6;
-    margin: 0;
+  font-size: 15px;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+  margin: 0;
 }
-

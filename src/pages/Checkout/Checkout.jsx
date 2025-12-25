@@ -21,7 +21,7 @@ const Checkout = () => {
   const subtotal = getCartTotal();
   const shipping = subtotal > 50 ? 0 : 5.99;
   const total = subtotal + shipping;
-  const totalInCents = Math.round(total * 100); // Stripe uses cents
+  const totalInCents = Math.round(total * 100);
 
   const [clientSecret, setClientSecret] = useState(null);
   const [isLoadingPayment, setIsLoadingPayment] = useState(false);
@@ -316,7 +316,6 @@ const Checkout = () => {
                       <p>{formData.email}</p>
                     </div>
 
-                    {/* Stripe Elements Provider with clientSecret */}
                     {clientSecret && (
                       <StripeProvider
                         options={{

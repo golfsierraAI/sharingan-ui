@@ -51,13 +51,13 @@ const Sourcing = () => {
       step: "01",
       title: "Farm Selection",
       description:
-        "We carefully select farms based on their organic certification, sustainable practices, and commitment to quality. Each farm is personally visited and evaluated.",
+        "We carefully select farms based on their sustainable practices and commitment to quality. Each farm is personally visited and evaluated.",
     },
     {
       step: "02",
       title: "Growing & Harvesting",
       description:
-        "Farmers use traditional, organic methods passed down through generations. Spices are harvested at peak ripeness to ensure maximum flavor and potency.",
+        "Farmers use traditional methods passed down through generations. Spices are harvested at peak ripeness to ensure maximum flavor and potency.",
     },
     {
       step: "03",
@@ -87,9 +87,9 @@ const Sourcing = () => {
       icon: "🤝",
     },
     {
-      title: "Organic Certification",
+      title: "Sustainable Practices",
       description:
-        "100% of our partner farms are certified organic, using no synthetic pesticides or fertilizers.",
+        "100% of our partner farms follow sustainable farming practices, prioritizing environmental health and quality.",
       icon: "🌱",
     },
     {

@@ -5,7 +5,7 @@ const Marquee = () => {
         "🌶️ Free Shipping on Orders Over $50",
         "✨ Fresh Spices, Sourced Directly from Farms",
         "🎉 New Arrivals: Exotic Spice Blends",
-        "💚 100% Organic & Natural"
+        "💚 Premium Quality & Natural"
     ];
 
     return (

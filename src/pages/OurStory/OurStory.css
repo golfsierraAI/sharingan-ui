@@ -167,10 +167,10 @@
 .timeline-dot {
   width: 16px;
   height: 16px;
-  background: #000000;
+  background: var(--color-brand);
   border-radius: 50%;
   border: 3px solid var(--color-bg-primary);
-  box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 0 4px rgba(20, 69, 47, 0.2);
   position: relative;
   z-index: 2;
 }
@@ -194,7 +194,7 @@
 
 .timeline-year {
   display: inline-block;
-  background: #000000;
+  background: var(--color-brand);
   color: white;
   padding: 4px 12px;
   border-radius: 12px;

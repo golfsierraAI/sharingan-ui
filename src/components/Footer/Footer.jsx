@@ -26,8 +26,8 @@ const Footer = () => {
             </div>
             <p className="footer-description">
               Bringing authentic Indian spices directly from farms to your
-              kitchen. Experience the true taste of tradition with our premium,
-              organic spices.
+              kitchen. Experience the true taste of tradition with our premium
+              spices.
             </p>
             <div className="footer-social">
               <a
@@ -219,7 +219,7 @@ const Footer = () => {
             </div>
             <div className="trust-badge">
               <span>✓</span>
-              <span>100% Organic</span>
+              <span>Premium Quality</span>
             </div>
             <div className="trust-badge">
               <span>🚚</span>

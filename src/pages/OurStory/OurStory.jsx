@@ -13,9 +13,9 @@ const OurStory = () => {
     },
     {
       year: "2005",
-      title: "Going Organic",
+      title: "Sustainable Expansion",
       description:
-        "Transitioned to 100% organic farming practices, partnering with small farmers across India who shared our commitment to sustainable agriculture.",
+        "Expanded partnerships with small farmers across India who shared our commitment to sustainable agriculture and quality practices.",
     },
     {
       year: "2010",
@@ -48,7 +48,7 @@ const OurStory = () => {
       icon: "🌱",
       title: "Sustainability",
       description:
-        "We're committed to protecting our planet through organic farming, eco-friendly packaging, and carbon-neutral operations.",
+        "We're committed to protecting our planet through sustainable farming, eco-friendly packaging, and carbon-neutral operations.",
     },
     {
       icon: "🤝",

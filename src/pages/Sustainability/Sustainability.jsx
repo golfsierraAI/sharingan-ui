@@ -65,7 +65,7 @@ const Sustainability = () => {
       items: [
         "Achieve complete carbon neutrality",
         "100% compostable packaging for all products",
-        "Support 50 new farms in transitioning to organic",
+        "Support 50 new farms in adopting sustainable practices",
       ],
     },
     {
@@ -80,8 +80,8 @@ const Sustainability = () => {
 
   const certifications = [
     {
-      name: "USDA Organic",
-      description: "All our spices are certified organic by the USDA",
+      name: "Quality Certified",
+      description: "All our spices meet the highest quality standards",
     },
     {
       name: "Fair Trade",

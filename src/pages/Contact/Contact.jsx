@@ -48,8 +48,8 @@ const Contact = () => {
         "We offer a 30-day satisfaction guarantee on all unopened products.",
     },
     {
-      question: "Are your spices organic?",
-      answer: "Yes, all our spices are 100% USDA certified organic.",
+      question: "What quality standards do your spices meet?",
+      answer: "All our spices meet the highest quality standards and are sourced from certified farms.",
     },
   ];
 

@@ -41,9 +41,9 @@ const FAQ = () => {
       category: "Products & Quality",
       questions: [
         {
-          question: "Are your spices organic?",
+          question: "What quality standards do your spices meet?",
           answer:
-            "Yes! All of our spices are 100% USDA certified organic. We source directly from certified organic farms in India and conduct third-party testing to ensure purity and quality. Each product comes with a certification number you can verify.",
+            "All of our spices meet the highest quality standards. We source directly from certified farms in India and conduct third-party testing to ensure purity and quality. Each product is carefully selected and tested for freshness and authenticity.",
         },
         {
           question: "How long do spices stay fresh?",

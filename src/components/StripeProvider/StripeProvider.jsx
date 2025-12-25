@@ -14,12 +14,17 @@ const stripePromise = loadStripe(import.meta.env.VITE_STRIPE_PUBLISHABLE_KEY);
  */
 const StripeProvider = ({ children, options = {} }) => {
   // Default appearance styling for Stripe Elements
+  // Use brand color for text - will be #14452F in light theme, #000000 in dark theme
+  const brandColor = typeof window !== 'undefined' 
+    ? getComputedStyle(document.documentElement).getPropertyValue('--color-brand').trim() || "#14452F"
+    : "#14452F";
+  
   const appearance = {
     theme: "stripe",
     variables: {
       colorPrimary: "#0570de", // Stripe's default blue
       colorBackground: "#ffffff",
-      colorText: "#1a1a1a",
+      colorText: brandColor,
       colorDanger: "#df1b41",
       fontFamily: "system-ui, -apple-system, sans-serif",
       spacingUnit: "4px",
