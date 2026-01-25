@@ -23,13 +23,23 @@ const AccountDropdown = ({ isOpen, onClose }) => {
         navigate('/login');
     };
 
+    const handleViewOrders = () => {
+        onClose();
+        navigate('/orders');
+    };
+
     return (
         <Dropdown isOpen={isOpen} onClose={onClose}>
             <div className="account-dropdown-menu">
                 {isAuthenticated ? (
-                    <button className="account-menu-item" onClick={handleLogout}>
-                        Logout
-                    </button>
+                    <>
+                        <button className="account-menu-item" onClick={handleViewOrders}>
+                            View Orders
+                        </button>
+                        <button className="account-menu-item" onClick={handleLogout}>
+                            Logout
+                        </button>
+                    </>
                 ) : (
                     <>
                         <button className="account-menu-item" onClick={handleLogin}>

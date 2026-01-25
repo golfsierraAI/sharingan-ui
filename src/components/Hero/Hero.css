@@ -35,14 +35,6 @@
   pointer-events: none;
 }
 
-[data-theme="dark"] .hero-overlay {
-  background: linear-gradient(
-    135deg,
-    rgba(0, 0, 0, 0.5) 0%,
-    rgba(0, 0, 0, 0.4) 100%
-  );
-}
-
 .hero-content {
   max-width: 900px;
   margin: 0 auto;
@@ -74,10 +66,6 @@
   margin-right: auto;
   animation: fadeInUp 1s ease-out 0.4s backwards;
   transition: color 0.3s ease;
-}
-
-[data-theme="dark"] .hero-subtitle {
-  color: white;
 }
 
 /* Hero Actions */
@@ -117,18 +105,6 @@
   box-shadow: 0 12px 24px rgba(20, 69, 47, 0.3);
 }
 
-[data-theme="dark"] .hero-btn-primary {
-  background: #14452f;
-  border-color: #14452f;
-}
-
-[data-theme="dark"] .hero-btn-primary:hover {
-  background: #0f3525;
-  border-color: #0f3525;
-  color: #ffffff;
-  box-shadow: 0 12px 24px rgba(20, 69, 47, 0.3);
-}
-
 .hero-btn-primary:hover .btn-arrow {
   transform: translateX(4px);
 }
@@ -150,12 +126,6 @@
   color: #ffffff;
   transform: translateY(-3px);
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
-}
-
-[data-theme="dark"] .hero-btn-secondary:hover {
-  background: #14452f;
-  color: #ffffff;
-  box-shadow: 0 12px 24px rgba(20, 69, 47, 0.3);
 }
 
 /* Hero Stats */
@@ -181,10 +151,6 @@
   transition: color 0.3s ease;
 }
 
-[data-theme="dark"] .stat-number {
-  color: white !important;
-}
-
 .stat-label {
   font-size: 13px;
   font-weight: 500;
@@ -194,20 +160,11 @@
   transition: color 0.3s ease;
 }
 
-[data-theme="dark"] .stat-label {
-  color: white !important;
-}
-
 .hero-stat-divider {
   width: 1px;
   height: 40px;
   background: white;
   transition: background 0.3s ease;
-  opacity: 0.8;
-}
-
-[data-theme="dark"] .hero-stat-divider {
-  background: white;
   opacity: 0.8;
 }
 

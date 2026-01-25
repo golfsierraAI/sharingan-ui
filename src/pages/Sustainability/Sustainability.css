@@ -329,10 +329,6 @@
   margin-bottom: 16px;
 }
 
-[data-theme="dark"] .certification-badge {
-  background: rgba(255, 255, 255, 0.1);
-}
-
 .certification-card h3 {
   font-size: 16px;
   font-weight: 700;

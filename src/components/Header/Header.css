@@ -66,16 +66,6 @@
     color: var(--color-text-secondary);
 }
 
-.theme-toggle {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.theme-toggle:hover {
-    transform: rotate(20deg);
-}
-
 .cart-btn {
     position: relative;
 }

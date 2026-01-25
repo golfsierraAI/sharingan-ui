@@ -121,15 +121,6 @@ const Footer = () => {
               <li>
                 <Link to="/products">New Arrivals</Link>
               </li>
-              <li>
-                <Link to="/products">Sale</Link>
-              </li>
-              <li>
-                <Link to="/products">Gift Cards</Link>
-              </li>
-              <li>
-                <Link to="/products">Bundles & Sets</Link>
-              </li>
             </ul>
           </div>
 
@@ -144,38 +135,10 @@ const Footer = () => {
                 <Link to="/faq">FAQs</Link>
               </li>
               <li>
-                <Link to="/shipping">Shipping Information</Link>
-              </li>
-              <li>
                 <Link to="/returns">Returns & Exchanges</Link>
               </li>
               <li>
                 <Link to="/track-order">Track Your Order</Link>
-              </li>
-              <li>
-                <Link to="/size-guide">Size & Quantity Guide</Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* About Section */}
-          <div className="footer-column">
-            <h4 className="footer-heading">About Us</h4>
-            <ul className="footer-links">
-              <li>
-                <Link to="/about">Our Story</Link>
-              </li>
-              <li>
-                <Link to="/sustainability">Sustainability</Link>
-              </li>
-              <li>
-                <Link to="/sourcing">Sourcing Practices</Link>
-              </li>
-              <li>
-                <Link to="/careers">Careers</Link>
-              </li>
-              <li>
-                <Link to="/press">Press & Media</Link>
               </li>
             </ul>
           </div>
@@ -206,36 +169,6 @@ const Footer = () => {
               <p>📞 1-800-SPICE-01</p>
               <p>✉️ support@spicebazaar.com</p>
               <p>🕒 Mon-Fri: 9AM - 6PM EST</p>
-            </div>
-          </div>
-        </div>
-
-        {/* Payment & Trust Badges */}
-        <div className="footer-trust">
-          <div className="trust-badges">
-            <div className="trust-badge">
-              <span>🔒</span>
-              <span>Secure Payment</span>
-            </div>
-            <div className="trust-badge">
-              <span>✓</span>
-              <span>Premium Quality</span>
-            </div>
-            <div className="trust-badge">
-              <span>🚚</span>
-              <span>Free Shipping</span>
-            </div>
-            <div className="trust-badge">
-              <span>♻️</span>
-              <span>Eco-Friendly</span>
-            </div>
-          </div>
-          <div className="payment-methods">
-            <span className="payment-label">We Accept:</span>
-            <div className="payment-icons">
-              <span className="payment-icon">💳</span>
-              <span className="payment-icon">💰</span>
-              <span className="payment-icon">🏦</span>
             </div>
           </div>
         </div>

@@ -195,25 +195,6 @@
   text-decoration: underline;
 }
 
-/* Dark mode support */
-[data-theme="dark"] .success-message {
-  background: var(--color-bg-primary);
-  border-color: var(--color-border);
-}
-
-[data-theme="dark"] .success-message li {
-  background: var(--color-bg-secondary);
-}
-
-[data-theme="dark"] .success-message li:hover {
-  background: var(--color-bg-tertiary);
-}
-
-[data-theme="dark"] .success-message li::before {
-  background: rgba(16, 185, 129, 0.2);
-  color: #10b981;
-}
-
 /* Responsive */
 @media (max-width: 640px) {
   .checkout-success-main {

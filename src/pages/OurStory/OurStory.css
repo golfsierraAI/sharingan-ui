@@ -175,11 +175,6 @@
   z-index: 2;
 }
 
-[data-theme="dark"] .timeline-dot {
-  background: #ffffff;
-  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.2);
-}
-
 .timeline-line {
   width: 2px;
   flex: 1;
@@ -201,11 +196,6 @@
   font-size: 14px;
   font-weight: 700;
   margin-bottom: 12px;
-}
-
-[data-theme="dark"] .timeline-year {
-  background: #ffffff;
-  color: #000000;
 }
 
 .timeline-content h3 {

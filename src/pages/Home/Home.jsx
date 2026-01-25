@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import { Fade, Slide } from "react-awesome-reveal";
 import AppHeader from "../../components/AppHeader";
 import Hero from "../../components/Hero";
@@ -14,62 +14,42 @@ import Carousel from "../../components/Carousel";
 import "./Home.css";
 import productService from "../../services/productService";
 
-const getSpiceProducts = async () => {
-  const products = await productService.getProducts();
-  return products;
+// Animation constants
+const FADE_ANIMATION = {
+  direction: "up",
+  triggerOnce: true,
+  duration: 400,
 };
 
 const Home = () => {
   const [spiceProducts, setSpiceProducts] = useState([]);
   const [categories, setCategories] = useState([]);
+  const navigate = useNavigate();
 
-  const parallaxRef = useRef(null);
-
+  // Fetch products and extract categories
   useEffect(() => {
-    getSpiceProducts().then((products) => {
-      setCategories(
-        Array.from(
+    const fetchProducts = async () => {
+      try {
+        const products = await productService.getProducts();
+        const uniqueCategories = Array.from(
           new Set(products.map((product) => product.categories).flat())
-        )
-      );
-      setSpiceProducts(products);
-    });
-  }, []);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (parallaxRef.current) {
-        const section = parallaxRef.current.closest(".parallax-section");
-        if (section) {
-          const rect = section.getBoundingClientRect();
-          const scrolled = window.pageYOffset;
-          const sectionTop = section.offsetTop;
-          const sectionHeight = section.offsetHeight;
-          const windowHeight = window.innerHeight;
-
-          // Calculate parallax only when section is in view
-          if (rect.top < windowHeight && rect.bottom > 0) {
-            const speed = 0.3;
-            const yPos = (scrolled - sectionTop) * speed;
-            parallaxRef.current.style.transform = `translateY(${yPos}px)`;
-          }
-        }
+        );
+        setCategories(uniqueCategories);
+        setSpiceProducts(products);
+      } catch (error) {
+        console.error('Error fetching products:', error);
+        // Set empty arrays on error to prevent UI issues
+        setCategories([]);
+        setSpiceProducts([]);
       }
     };
 
-    window.addEventListener("scroll", handleScroll);
-    handleScroll(); // Initial call
-    return () => window.removeEventListener("scroll", handleScroll);
+    fetchProducts();
   }, []);
 
-  console.log(categories);
-
-  const navigate = useNavigate();
-
   const handleShopNow = () => {
-    document.querySelector(".products-section")?.scrollIntoView({
-      behavior: "smooth",
-    });
+    const productsSection = document.querySelector(".products-section");
+    productsSection?.scrollIntoView({ behavior: "smooth" });
   };
 
   const handleProductClick = (product) => {
@@ -78,6 +58,10 @@ const Home = () => {
 
   const handleCategoryClick = (category) => {
     navigate("/products", { state: { selectedCategory: category } });
+  };
+
+  const handleSeeAllProducts = () => {
+    navigate("/products");
   };
 
   return (
@@ -92,80 +76,24 @@ const Home = () => {
           onButtonClick={handleShopNow}
         />
 
-        {/* Parallax Decorative Section */}
-        <section className="parallax-section">
-          <div className="parallax-bg" ref={parallaxRef}>
-            <svg
-              width="100%"
-              height="100%"
-              viewBox="0 0 1200 800"
-              preserveAspectRatio="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <defs>
-                <linearGradient
-                  id="parallaxGradient1"
-                  x1="0%"
-                  y1="0%"
-                  x2="0%"
-                  y2="100%"
-                >
-                  <stop offset="0%" stopColor="#14452f" stopOpacity="0.25" />
-                  <stop offset="50%" stopColor="#14452f" stopOpacity="0.15" />
-                  <stop offset="100%" stopColor="#14452f" stopOpacity="0.08" />
-                </linearGradient>
-                <linearGradient
-                  id="parallaxGradient2"
-                  x1="0%"
-                  y1="0%"
-                  x2="0%"
-                  y2="100%"
-                >
-                  <stop offset="0%" stopColor="#14452f" stopOpacity="0.2" />
-                  <stop offset="100%" stopColor="#14452f" stopOpacity="0.1" />
-                </linearGradient>
-              </defs>
-              <path
-                d="M0,400 Q200,300 400,400 T800,400 T1200,400 L1200,800 L0,800 Z"
-                fill="url(#parallaxGradient1)"
-              />
-              <path
-                d="M0,500 Q300,400 600,500 T1200,500 L1200,800 L0,800 Z"
-                fill="url(#parallaxGradient2)"
-                opacity="0.8"
-              />
-              <path
-                d="M0,600 Q400,500 800,600 T1200,600 L1200,800 L0,800 Z"
-                fill="url(#parallaxGradient2)"
-                opacity="0.6"
-              />
-              <path
-                d="M0,700 Q500,600 1000,700 T1200,700 L1200,800 L0,800 Z"
-                fill="url(#parallaxGradient2)"
-                opacity="0.4"
-              />
-            </svg>
-          </div>
-        </section>
-
         {/* Features Section */}
         <section className="features-section">
           <div className="features-container">
-            <Fade direction="up" triggerOnce delay={0} duration={400}>
+            <Fade {...FADE_ANIMATION} delay={0}>
               <FeatureCard
                 icon="best.svg"
                 title="Premium Quality"
                 description="Sourced from certified farms across India"
               />
             </Fade>
-            <Fade direction="up" triggerOnce delay={100} duration={400}>
+            <Fade {...FADE_ANIMATION} delay={100}>
               <FeatureCard
                 icon="shipping.svg"
                 title="Free Shipping"
                 description="On orders over $50 with fast delivery"
               />
             </Fade>
-            <Fade direction="up" triggerOnce delay={200} duration={400}>
+            <Fade {...FADE_ANIMATION} delay={200}>
               <FeatureCard
                 icon="green-leaf.svg"
                 title="Freshness Guaranteed"
@@ -177,7 +105,7 @@ const Home = () => {
 
         {/* Best Sellers Section */}
         <section className="products-section">
-          <Fade direction="up" triggerOnce delay={0} duration={400}>
+          <Fade {...FADE_ANIMATION} delay={0}>
             <div className="products-header">
               <SectionTitle subtitle="Our most loved spices, chosen by thousands of home chefs">
                 Best Sellers
@@ -186,13 +114,7 @@ const Home = () => {
           </Fade>
           <div className="products-grid">
             {spiceProducts.slice(0, 4).map((product, index) => (
-              <Fade
-                key={product.id}
-                direction="up"
-                triggerOnce
-                delay={index * 50}
-                duration={400}
-              >
+              <Fade key={product.id} {...FADE_ANIMATION} delay={index * 50}>
                 <ProductCard
                   name={product.name}
                   price={product.price}
@@ -202,11 +124,11 @@ const Home = () => {
               </Fade>
             ))}
           </div>
-          <Fade direction="up" triggerOnce delay={250} duration={400}>
+          <Fade {...FADE_ANIMATION} delay={250}>
             <div className="see-all-wrapper">
               <button
                 className="btn btn-outline"
-                onClick={() => navigate("/products")}
+                onClick={handleSeeAllProducts}
               >
                 See All Products
               </button>
@@ -216,7 +138,7 @@ const Home = () => {
 
         {/* Trending Items Section */}
         <section className="trending-section">
-          <Fade direction="up" triggerOnce delay={0} duration={400}>
+          <Fade {...FADE_ANIMATION} delay={0}>
             <div className="trending-header">
               <SectionTitle subtitle="Most popular picks from our customers this week">
                 Trending Items
@@ -224,17 +146,11 @@ const Home = () => {
             </div>
           </Fade>
           <div className="products-grid">
-            {spiceProducts
+            {[...spiceProducts]
               .reverse()
               .slice(4, 8)
               .map((product, index) => (
-                <Fade
-                  key={product.id}
-                  direction="up"
-                  triggerOnce
-                  delay={index * 50}
-                  duration={400}
-                >
+                <Fade key={product.id} {...FADE_ANIMATION} delay={index * 50}>
                   <ProductCard
                     name={product.name}
                     price={product.price}
@@ -244,11 +160,11 @@ const Home = () => {
                 </Fade>
               ))}
           </div>
-          <Fade direction="up" triggerOnce delay={250} duration={400}>
+          <Fade {...FADE_ANIMATION} delay={250}>
             <div className="see-all-wrapper">
               <button
                 className="btn btn-outline"
-                onClick={() => navigate("/products")}
+                onClick={handleSeeAllProducts}
               >
                 See All Products
               </button>
@@ -258,7 +174,7 @@ const Home = () => {
 
         {/* Categories Section */}
         <section className="categories-section">
-          <Fade direction="up" triggerOnce delay={0} duration={400}>
+          <Fade {...FADE_ANIMATION} delay={0}>
             <div className="categories-header">
               <SectionTitle subtitle="Explore our wide range of authentic spices by category">
                 Shop by Category
@@ -266,25 +182,20 @@ const Home = () => {
             </div>
           </Fade>
           <Carousel itemsPerView={4}>
-            {categories.map((category, index) => (
-              <Fade
-                key={category}
-                direction="up"
-                triggerOnce
-                delay={index * 50}
-                duration={400}
-              >
-                <CategoryCard
-                  icon={
-                    spiceProducts.find((product) =>
-                      product.categories.includes(category)
-                    )?.url
-                  }
-                  title={category}
-                  onClick={() => handleCategoryClick(category)}
-                />
-              </Fade>
-            ))}
+            {categories.map((category, index) => {
+              const categoryProduct = spiceProducts.find((product) =>
+                product.categories.includes(category)
+              );
+              return (
+                <Fade key={category} {...FADE_ANIMATION} delay={index * 50}>
+                  <CategoryCard
+                    icon={categoryProduct?.url}
+                    title={category}
+                    onClick={() => handleCategoryClick(category)}
+                  />
+                </Fade>
+              );
+            })}
           </Carousel>
         </section>
 
@@ -327,10 +238,10 @@ const Home = () => {
 
         {/* Testimonials Section */}
         <section className="testimonials-section">
-          <Fade direction="up" triggerOnce delay={0} duration={400}>
+          <Fade {...FADE_ANIMATION} delay={0}>
             <SectionTitle>What Our Customers Say</SectionTitle>
           </Fade>
-          <Fade direction="up" triggerOnce cascade damping={0.05} duration={400}>
+          <Fade {...FADE_ANIMATION} cascade damping={0.05}>
             <div className="testimonials-grid">
               <TestimonialCard
                 rating={5}

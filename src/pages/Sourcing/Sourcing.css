@@ -161,11 +161,6 @@
   font-weight: 700;
 }
 
-[data-theme="dark"] .region-badge {
-  background: rgba(255, 255, 255, 0.95);
-  color: var(--color-brand);
-}
-
 .region-content {
   padding: 24px;
 }
@@ -217,10 +212,6 @@
   font-weight: 600;
 }
 
-[data-theme="dark"] .specialty-tag {
-  background: rgba(255, 255, 255, 0.1);
-}
-
 /* Process Section */
 .process-section {
   background: var(--color-bg-secondary);
@@ -253,12 +244,6 @@
   font-weight: 700;
   border-radius: 50%;
   box-shadow: 0 8px 24px rgba(20, 69, 47, 0.3);
-}
-
-[data-theme="dark"] .process-step {
-  background: #ffffff;
-  color: #000000;
-  box-shadow: 0 8px 24px rgba(255, 255, 255, 0.3);
 }
 
 .process-content h3 {
